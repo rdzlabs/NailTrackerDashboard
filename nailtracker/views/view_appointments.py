@@ -1,7 +1,8 @@
 import streamlit as st
 from datetime import date
-from data import fetch_clients, fetch_services
+from data import fetch_clients, fetch_services, fetch_appointments
 from logic import insert_appointment
+import pandas as pd
 
 def show_form():
     with st.form("appointment_form"):
@@ -42,3 +43,20 @@ def show_form():
                 selected_ids
             )
             st.success("Appointment logged.")
+
+def show_data():
+    st.subheader("Appointment History")
+
+    # Fetch all appointments
+    appointments = fetch_appointments.get_all()
+
+    # Search
+    search = st.text_input("Search by client name...")
+    if search:
+        appointments = [a for a in appointments if search.lower() in a["client_name"].lower()]
+
+    # Display each row using expanders
+    for appt in appointments:
+        with st.expander(f"{appt['appointment_date']} — {appt['client_name']} — ${appt['total_amount']:.2f} ({appt['method']})"):
+            st.markdown(f"**Services:** {', '.join(appt['services']) or '—'}")
+            st.markdown(f"**Notes:** {appt['notes'] or 'No notes'}")
