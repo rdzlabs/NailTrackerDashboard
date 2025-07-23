@@ -11,6 +11,6 @@ if section == "Dashboard":
     st.title("Dashboard")
     view_dashboard.show()
 
-elif section == "View Data":
-    st.title("View Data")
-    view_data.show()
+# elif section == "View Data":
+#     st.title("View Data")
+#     view_data.show()
