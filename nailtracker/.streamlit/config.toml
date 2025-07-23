@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#76563f"             # Deep brown — now used for buttons/active elements
+backgroundColor = "#f0ece3"          # Soft off-white — keep as main BG
+secondaryBackgroundColor = "#d9c8b6" # Light beige — used for sidebar/cards
+textColor = "#3e2c1a"                # Stronger deep brown — better contrast
+font = "sans serif"

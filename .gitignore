@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Streamlit cache
+.streamlit/config.toml
+.streamlit/*.json
+.streamlit/*.lock
+
+# SQLite DB (if you want to ignore actual data)
+database/*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+*.bak
+*.tmp
+
+# Deployment
+*.tar.gz
+*.zip
+*.egg-info/
+dist/
+build/
